@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array - Objetos en Javascript</title>
+</head>
+<body>
+    
+    <script>
+
+        var numero = -123.45
+        console.log(numero, typeof numero, Array.isArray(numero))
+
+        var booleana = true
+        console.log(booleana, typeof booleana, Array.isArray(booleana))
+
+        var mensaje = 'Hola'
+        console.log(mensaje, typeof mensaje, Array.isArray(mensaje))
+
+        /* ---------------- */
+        /*      ARRAY       */
+        /* ---------------- */
+        //https://www.w3schools.com/js/js_array_methods.asp
+
+        /* array homogeneo */
+        var arrayNumeros = [10,11,12,13,14,15,16]
+        console.log(arrayNumeros, typeof arrayNumeros, Array.isArray(arrayNumeros)?'Es un array':'')
+
+        arrayNumeros[arrayNumeros.length] = 99
+        arrayNumeros[15] = 15
+        arrayNumeros[3] = 3
+        for(var i=0; i<arrayNumeros.length; i++) {
+            console.log(i,arrayNumeros[i])
+        }
+
+        /* array heterogeneo */
+        var arrayNumeros2 = ['a','b','c']
+        for(var i=0; i<10; i++) {
+            //arrayNumeros2[i] = i
+            arrayNumeros2.push(i)
+        }
+        console.log(arrayNumeros2)
+
+        /* array heterogeneo - ej. datos de una persona */
+        var NOMBRE = 2
+        var APELLIDO = 1
+        var EDAD = 0
+        var arrayPersona = [23, 'Perez','Juan']
+        console.log(arrayPersona)
+
+        console.log('La persona se llama ' + 
+                arrayPersona[NOMBRE] + ' ' + arrayPersona[APELLIDO] +
+                ' y tiene ' + arrayPersona[EDAD] + ' años.'
+        )
+
+        /* ---------------- */
+        /*     OBJETOS      */
+        /* ---------------- */
+        var objPersona = { apellido: 'Perez', nombre: 'Juan', edad: 23 }
+        console.log(objPersona)
+
+        /* notación corchete */
+        console.log('La persona se llama ' + 
+                objPersona['nombre'] + ' ' + objPersona['apellido'] +
+                ' y tiene ' + objPersona['edad'] + ' años.'
+        )
+        /* notación punto */
+        console.log('La persona se llama ' + 
+                objPersona.nombre + ' ' + objPersona.apellido +
+                ' y tiene ' + objPersona.edad + ' años.'
+        )
+
+        /* ---------------------- */
+        /*     ARRAY OBJETOS      */
+        /* ---------------------- */
+        var clientes = [
+            { apellido: 'Perez', nombre: 'Juan', edad: 23 },
+            { apellido: 'Gomez', nombre: 'Pedro', edad: 26 },
+            { apellido: 'Mei', nombre: 'Ana', edad: 33 },
+            { apellido: 'Gonzalez', nombre: 'María', edad: 29 }
+        ]
+        console.log(clientes)
+
+        console.log('/* --- ciclo FOR --- */')
+        for(var cliente=0; cliente<clientes.length; cliente++) {
+            /* console.log(
+                'El cliente se llama ' + clientes[cliente].nombre + ' ' + clientes[cliente].apellido + 
+                ' y tiene ' + clientes[cliente].edad + ' años.'
+            ) */
+            var alias = 'nombre'
+            console.log(
+                'El cliente se llama ' + clientes[cliente][alias] + ' ' + clientes[cliente]['apellido'] + 
+                ' y tiene ' + clientes[cliente]['edad'] + ' años.'
+            )
+        }
+
+        console.log('/* --- ciclo FOREACH --- */')
+        clientes.forEach(function(client) {
+            console.log(
+                'El cliente se llama ' + client.nombre + ' ' + client.apellido + 
+                ' y tiene ' + client.edad + ' años.'
+            )
+        })
+
+        console.log('/* --- ciclo FOR OF --- */')
+        for(var client of clientes) {
+            console.log(
+                'El cliente se llama ' + client.nombre + ' ' + client.apellido + 
+                ' y tiene ' + client.edad + ' años.'
+            )
+        }
+
+
+        /* -------------------------- */
+        /*      OBJETO DE OBJETOS     */
+        /* -------------------------- */
+        var clientes2 = {
+            'cliente 1': { apellido: 'Perez', nombre: 'Juan', edad: 23 },
+            'cliente 2': { apellido: 'Gomez', nombre: 'Pedro', edad: 26 },
+            'cliente 3': { apellido: 'Mei', nombre: 'Ana', edad: 33 },
+            'cliente 4': { apellido: 'Gonzalez', nombre: 'María', edad: 29 }
+        }
+        console.log(clientes2)
+
+        console.log('/* --- ciclo FOR IN --- */')
+        for(var clave in clientes2) {
+            //console.log(clave, clientes2[clave])
+
+            console.log(
+                'El cliente se llama ' + clientes2[clave].nombre + ' ' + clientes2[clave].apellido + 
+                ' y tiene ' + clientes2[clave].edad + ' años.'
+            )
+        }
+ 
+    </script>
+
+</body>
+</html>

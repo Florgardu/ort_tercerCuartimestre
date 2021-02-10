@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+
+	<div id="app" class="container-fluid mt-3">
+
+	<headerjuego :colorAJugar="colorAJugar"></headerjuego>
+
+	<navigator></navigator>
+
+
+	
+	<div id="container">
+		<div class="square" :square="01" :style="{'background-color': color}" @click="mostrarColor"></div>
+		<div class="square" :square="02" :style="{'background-color': color}" @click="mostrarColor"></div>
+		<div class="square" :square="03" :style="{'background-color': color}" @click="mostrarColor"></div>
+		<div class="square" :square="04" :style="{'background-color': color}" @click="mostrarColor"></div>
+		<div class="square" :square="05" :style="{'background-color': color}" @click="mostrarColor"></div>
+		<div class="square" :square="06" :style="{'background-color': color}" @click="mostrarColor"></div>
+	</div>
+
+
+</div>
+
+  <!-- Vue.js CDN -->
+    <!-- development version, includes helpful console warnings -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    
+    <script src="rgbgame.js"></script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,19 @@
+{
+  "name": "mi-proyecto",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "este es mi primer proyecto de prueba",
+  "main": "index.js",
+  "scripts": {
+    "test": "no test specified"
+  },
+  "repository": {
+    "type": "git",
+    "url": "null"
+  },
+  "keywords": [
+    "[]"
+  ],
+  "author": "florgardu",
+  "license": "ISC"
+}

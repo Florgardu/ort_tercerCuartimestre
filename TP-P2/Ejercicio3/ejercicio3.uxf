@@ -1,0 +1,77 @@
+<diagram program="umletino" version="14.3.0"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>71</x><y>54</y><w>210</w><h>100</h></coordinates><panel_attributes>Proyecto
+--
++nombre:String
++fechaCreacion():String
+--
+-getStatus(): double
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>281</x><y>214</y><w>210</w><h>60</h></coordinates><panel_attributes>&lt;&lt;Tarea&gt;&gt;
+--
+--
+/+CalcularTiempoRestante():double/
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>101</x><y>434</y><w>210</w><h>60</h></coordinates><panel_attributes>TareaSimple
+--
+--
++CalcularTiempoRestante():double
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>621</x><y>284</y><w>210</w><h>110</h></coordinates><panel_attributes>Recurso1
+--
+_-instancia:Recurso1_
++tiempoTotal():double
+--
++calcularTiempoRestante():double
+_+getInstancia:Recurso1_
+-Recurso1()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>751</x><y>114</y><w>210</w><h>80</h></coordinates><panel_attributes>&lt;&lt;Recurso&gt;&gt;
+--
+/+tiempoTotal:double/
+--
+/+calcularTiempoRestante():double/
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>431</x><y>33</y><w>210</w><h>70</h></coordinates><panel_attributes>Entregable
+--
++nombre:String
+--
+-entregarse():void
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>271</x><y>113</y><w>150</w><h>110</h></coordinates><panel_attributes>lt=&lt;-
+m1=0..n</panel_attributes><additional_attributes>110;90;110;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>221</x><y>273</y><w>130</w><h>180</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>110;10;10;160</additional_attributes></element><element><id>Relation</id><coordinates><x>401</x><y>273</y><w>100</w><h>180</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;80;160</additional_attributes></element><element><id>UMLClass</id><coordinates><x>351</x><y>434</y><w>210</w><h>90</h></coordinates><panel_attributes>TareaCompuesta
+--
+--
++CalcularTiempoRestante():double
++AgregarTarea(Tarea)
++EliminarTarea(Tarea)
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>481</x><y>253</y><w>80</w><h>200</h></coordinates><panel_attributes>lt=&lt;-
+m1=0..n</panel_attributes><additional_attributes>10;10;60;10;60;180</additional_attributes></element><element><id>Text</id><coordinates><x>501</x><y>243</y><w>100</w><h>70</h></coordinates><panel_attributes>Subtareas
+style=wordwrap</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>431</x><y>93</y><w>90</w><h>140</h></coordinates><panel_attributes>lt=&lt;-
+m1=0..n</panel_attributes><additional_attributes>60;10;10;120</additional_attributes></element><element><id>Relation</id><coordinates><x>481</x><y>163</y><w>280</w><h>80</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>260;10;10;60</additional_attributes></element><element><id>Relation</id><coordinates><x>741</x><y>193</y><w>80</w><h>110</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>60;10;10;90</additional_attributes></element><element><id>Relation</id><coordinates><x>881</x><y>193</y><w>70</w><h>110</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;50;90</additional_attributes></element><element><id>UMLClass</id><coordinates><x>871</x><y>284</y><w>210</w><h>110</h></coordinates><panel_attributes>Recurso2
+--
+_-instancia:Recurso2_
++tiempoTotal():double
+--
++calcularTiempoRestante():double
+_+getInstancia:Recurso2_
+-Recurso2()</panel_attributes><additional_attributes></additional_attributes></element><element><id>Text</id><coordinates><x>71</x><y>573</y><w>500</w><h>70</h></coordinates><panel_attributes>DS de la solicitud del tiempo restante de un proyecto que tiene una tarea simple y una
+tarea con sub-tarea, con distintos recursos asignados
+style=wordwrap</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLGeneric</id><coordinates><x>101</x><y>644</y><w>120</w><h>30</h></coordinates><panel_attributes>Proyecto:proyecto1
+bg=orange</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLGeneric</id><coordinates><x>151</x><y>694</y><w>20</w><h>160</h></coordinates><panel_attributes>
+bg=yellow</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>151</x><y>664</y><w>30</w><h>60</h></coordinates><panel_attributes>lt=.</panel_attributes><additional_attributes>10;10;10;40</additional_attributes></element><element><id>Relation</id><coordinates><x>41</x><y>694</y><w>130</w><h>40</h></coordinates><panel_attributes>lt=&lt;-
+getStatus()</panel_attributes><additional_attributes>110;20;10;20</additional_attributes></element><element><id>UMLGeneric</id><coordinates><x>241</x><y>643</y><w>160</w><h>30</h></coordinates><panel_attributes>TareaSimple: tareaSimple1
+bg=red</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLGeneric</id><coordinates><x>431</x><y>643</y><w>220</w><h>30</h></coordinates><panel_attributes>TareaCompuesta: tareaCompuesta1
+bg=red</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLGeneric</id><coordinates><x>311</x><y>693</y><w>20</w><h>90</h></coordinates><panel_attributes>
+bg=red</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLGeneric</id><coordinates><x>521</x><y>693</y><w>20</w><h>160</h></coordinates><panel_attributes>
+bg=red</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLGeneric</id><coordinates><x>841</x><y>643</y><w>160</w><h>30</h></coordinates><panel_attributes>TareaSimple: subTarea
+bg=red</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLGeneric</id><coordinates><x>901</x><y>693</y><w>20</w><h>160</h></coordinates><panel_attributes>
+bg=red</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>311</x><y>664</y><w>30</w><h>60</h></coordinates><panel_attributes>lt=.</panel_attributes><additional_attributes>10;10;10;40</additional_attributes></element><element><id>Relation</id><coordinates><x>521</x><y>664</y><w>30</w><h>60</h></coordinates><panel_attributes>lt=.</panel_attributes><additional_attributes>10;10;10;40</additional_attributes></element><element><id>Relation</id><coordinates><x>901</x><y>664</y><w>30</w><h>60</h></coordinates><panel_attributes>lt=.</panel_attributes><additional_attributes>10;10;10;40</additional_attributes></element><element><id>Relation</id><coordinates><x>161</x><y>704</y><w>170</w><h>40</h></coordinates><panel_attributes>lt=&lt;-
+calcularTiempoRestante()</panel_attributes><additional_attributes>150;20;10;20</additional_attributes></element><element><id>UMLGeneric</id><coordinates><x>681</x><y>644</y><w>120</w><h>30</h></coordinates><panel_attributes>Recurso:recurso1
+bg=orange</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLGeneric</id><coordinates><x>1031</x><y>644</y><w>120</w><h>30</h></coordinates><panel_attributes>Recurso:recurso2
+bg=orange</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLGeneric</id><coordinates><x>741</x><y>694</y><w>20</w><h>100</h></coordinates><panel_attributes>
+bg=yellow</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>741</x><y>664</y><w>30</w><h>60</h></coordinates><panel_attributes>lt=.</panel_attributes><additional_attributes>10;10;10;40</additional_attributes></element><element><id>Relation</id><coordinates><x>1081</x><y>664</y><w>30</w><h>60</h></coordinates><panel_attributes>lt=.</panel_attributes><additional_attributes>10;10;10;40</additional_attributes></element><element><id>UMLGeneric</id><coordinates><x>1081</x><y>694</y><w>20</w><h>160</h></coordinates><panel_attributes>
+bg=yellow</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>911</x><y>804</y><w>190</w><h>40</h></coordinates><panel_attributes>lt=&lt;-
+calcularTiempoRestante()</panel_attributes><additional_attributes>170;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>161</x><y>823</y><w>380</w><h>40</h></coordinates><panel_attributes>lt=&lt;-
+double:tiempo</panel_attributes><additional_attributes>10;20;360;20</additional_attributes></element><element><id>Relation</id><coordinates><x>321</x><y>743</y><w>440</w><h>40</h></coordinates><panel_attributes>lt=&lt;-
+double:tiempo</panel_attributes><additional_attributes>10;20;420;20</additional_attributes></element><element><id>Relation</id><coordinates><x>151</x><y>743</y><w>180</w><h>40</h></coordinates><panel_attributes>lt=&lt;-
+double:tiempo</panel_attributes><additional_attributes>10;20;160;20</additional_attributes></element><element><id>Relation</id><coordinates><x>321</x><y>714</y><w>440</w><h>40</h></coordinates><panel_attributes>lt=&lt;-
+calcularTiempoRestante()</panel_attributes><additional_attributes>420;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>161</x><y>784</y><w>380</w><h>40</h></coordinates><panel_attributes>lt=&lt;-
+calcularTiempoRestante()</panel_attributes><additional_attributes>360;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>531</x><y>794</y><w>380</w><h>40</h></coordinates><panel_attributes>lt=&lt;-
+calcularTiempoRestante()</panel_attributes><additional_attributes>360;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>911</x><y>823</y><w>180</w><h>40</h></coordinates><panel_attributes>lt=&lt;-
+double:tiempo</panel_attributes><additional_attributes>10;20;160;20</additional_attributes></element><element><id>Relation</id><coordinates><x>531</x><y>823</y><w>390</w><h>40</h></coordinates><panel_attributes>lt=&lt;-
+double:tiempo</panel_attributes><additional_attributes>10;20;370;20</additional_attributes></element></diagram>

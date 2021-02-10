@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Ejemplo 4</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+        crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <input type="text" class="form-control js-filter">
+    <ul class="js-personas"></ul>
+</body>
+
+</html>
+
+<script>
+    $(document).ready(function () {
+        var personas = ['jorge', 'carlos', 'cinthia'];
+
+        // Eliminamos los elementos que actualmente existen en la lista
+        $('.js-personas').empty();
+
+        // Añadimos los elementos directamente al DOM
+        $.each(personas, function (index, persona) {
+            $('.js-personas').append("<li>" + persona + "</li>");
+        });
+
+      
+        // Escuchamos cambios en el input
+        $('.js-filter').on('keyup', function () {
+            // Obtenemos el valor buscado
+            var criterioDeBusqueda = $(this).val().toLowerCase();
+
+            // Ocultamos a todas las personas
+            $('.js-personas li').hide();
+
+            // Y mostramos solo las personas que coinciden con la búsqueda
+            $('.js-personas li').filter(':contains("' + criterioDeBusqueda + '")').show();
+           
+        });
+    });
+</script>

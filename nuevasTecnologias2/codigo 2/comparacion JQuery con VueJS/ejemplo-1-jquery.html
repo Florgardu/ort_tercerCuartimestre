@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Ejemplo 1</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    </head>
+<body>
+    <div class="container">
+        <div id="divRegistracion">
+            <form id="formulario">
+                <h4>Registrarse con JQuery</h4>
+
+                <div class="form-group">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label for="apellido">Apellido:</label>
+                    <input type="text" id="apellido" class="form-control">
+                </div>
+
+                <button type="submit" id="btn_login" class="btn btn-primary" disabled>Continuar</button>
+            </form>
+        </div>
+        <div id="divBienvenida" style="display: none">
+            <h4>Bienvenido, [nombre completo]</h4>
+        </div>
+
+       
+    </div>
+</body>
+</html>
+
+<script>
+    $(document).ready(function () {
+        function esFormularioValido()
+        {
+            return $('#nombre').val() != "" && $('#apellido').val() != "";
+        }
+        function manejarEstadoParaContinuar()
+        {
+            $('#btn_login').prop('disabled', !esFormularioValido());
+        }
+        $('#nombre, #apellido').keyup(manejarEstadoParaContinuar);
+        
+        $('#formulario').submit(function (e) {
+            e.preventDefault();
+            if (!esFormularioValido()) return;
+            $('#divRegistracion').hide();
+            $('#divBienvenida').show();
+            $('#divBienvenida h4').text(
+                'Bienvenido, ' + $('#nombre').val() + ' ' + $('#apellido').val()
+            );
+        });
+    });
+  </script>

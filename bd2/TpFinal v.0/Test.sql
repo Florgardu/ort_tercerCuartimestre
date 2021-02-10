@@ -1,0 +1,83 @@
+--Pruebo el cursor del trigger ---
+
+  CREATE TABLE PRESTAMO_AUX (NRO_LECTOR int FOREIGN KEY REFERENCES LECTOR (NRO_LECTOR) ,
+                       NRO_LIBRO int FOREIGN KEY REFERENCES LIBRO (NRO_LIBRO)  ,
+                       NRO_COPIA smallint not null ,
+                       F_PREST datetime not null,
+                       F_DEVOL datetime ,
+						primary key (NRO_LIBRO, NRO_COPIA,NRO_LECTOR,F_PREST)
+                       )
+                                              
+BEGIN TRAN 
+
+INSERT INTO PRESTAMO (NRO_LECTOR , NRO_LIBRO , NRO_COPIA , F_PREST, F_DEVOL )
+SELECT NRO_LECTOR , NRO_LIBRO , NRO_COPIA , F_PREST, F_DEVOL
+FROM PRESTAMO_AUX
+
+
+ROLLBACK
+
+
+--- PRUEBO TRIGGER Y SP--
+
+-- LIBRO NO DISPONIBLE (NO SE INSERTA EN TABLA PRESTAMO, LANZA ERROR HACE ROLLBACK)--
+select *
+from LIBRO l 
+where l.ESTADO = 'N'
+
+INSERT INTO PRESTAMO VALUES
+(123456, 5078912, 2 ,'2021-03-07', null)
+
+select *
+from PRESTAMO
+where NRO_LIBRO = 5078912
+
+
+-- LIBRO DISPONIBLE:--
+
+select *
+from LIBRO l 
+where l.ESTADO = 'D'
+
+
+INSERT INTO PRESTAMO VALUES
+(123456, 7034567, 2 ,'2021-03-07', null)
+
+--SE INSERTA EN TABLA PRESTAMOS Y CAMBIA A ESTADO "P" EN TABLA COPIAS
+SELECT *
+FROM COPIAS c 
+WHERE NRO_LIBRO = 7034567
+
+select *
+from PRESTAMO
+where NRO_LIBRO = 7034567
+
+
+
+
+--- COPIA PRESTADA ---
+
+select *
+from COPIAS c
+where c.ESTADO = 'P'
+
+INSERT INTO PRESTAMO VALUES
+(123456, 5078912, 2 ,'2021-03-07', null)
+
+select *
+from PRESTAMO
+where NRO_LIBRO = 5078912 AND NRO_COPIA =2
+
+
+--COPIA NO DISPONIBLE --- 
+
+UPDATE COPIAS 
+SET ESTADO='N'
+WHERE NRO_LIBRO=6094527 AND NRO_COPIA =1;
+
+INSERT INTO PRESTAMO VALUES
+(123456, 6094527, 1 ,'2021-03-07', null)
+
+select *
+from PRESTAMO
+where NRO_LIBRO = 6094527 AND NRO_COPIA =1

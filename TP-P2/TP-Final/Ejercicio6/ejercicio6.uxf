@@ -1,0 +1,47 @@
+<diagram program="umletino" version="14.3.0"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>450</x><y>15</y><w>210</w><h>190</h></coordinates><panel_attributes>Juego
+--
+-nombre:String
+-estado: String
+--
++getEstado(): String
++suscribirse(Observador):void
++desuscribirse(Observador):void
++notificar()
++verEstadoJuego:String
++getNombre():String
++setEstado(String):void
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>560</x><y>295</y><w>140</w><h>60</h></coordinates><panel_attributes>Administración
+--
++update()
++enviarQueja():void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>750</x><y>135</y><w>210</w><h>50</h></coordinates><panel_attributes>&lt;&lt;Observador&gt;&gt;
+--
+/+update()/
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>650</x><y>95</y><w>120</w><h>70</h></coordinates><panel_attributes>lt=&lt;-
+m1=0..n</panel_attributes><additional_attributes>100;50;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>930</x><y>175</y><w>90</w><h>140</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;70;120</additional_attributes></element><element><id>Relation</id><coordinates><x>830</x><y>175</y><w>30</w><h>140</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;120</additional_attributes></element><element><id>Relation</id><coordinates><x>690</x><y>175</y><w>110</w><h>140</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>90;10;10;120</additional_attributes></element><element><id>UMLClass</id><coordinates><x>740</x><y>295</y><w>190</w><h>60</h></coordinates><panel_attributes>DepartamentoDeCompras
+--
++update()
++pedirMismoJuego():void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>960</x><y>295</y><w>170</w><h>60</h></coordinates><panel_attributes>Stock
+--
++update()
++colocarJuegoEnBaja():void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLGeneric</id><coordinates><x>230</x><y>535</y><w>210</w><h>30</h></coordinates><panel_attributes>SistemaAlquiler:sistemaTiendaJuego
+bg=orange</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLGeneric</id><coordinates><x>340</x><y>575</y><w>20</w><h>140</h></coordinates><panel_attributes>
+bg=yellow</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>340</x><y>555</y><w>30</w><h>30</h></coordinates><panel_attributes>lt=.</panel_attributes><additional_attributes>10;10;10;10</additional_attributes></element><element><id>UMLGeneric</id><coordinates><x>460</x><y>535</y><w>100</w><h>30</h></coordinates><panel_attributes>Juego:juego1
+bg=red</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>500</x><y>555</y><w>30</w><h>40</h></coordinates><panel_attributes>lt=.</panel_attributes><additional_attributes>10;10;10;20</additional_attributes></element><element><id>UMLGeneric</id><coordinates><x>500</x><y>575</y><w>20</w><h>240</h></coordinates><panel_attributes>
+bg=red</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLGeneric</id><coordinates><x>590</x><y>536</y><w>160</w><h>30</h></coordinates><panel_attributes>Observador:DeptoCompras
+bg=orange</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLGeneric</id><coordinates><x>650</x><y>585</y><w>20</w><h>230</h></coordinates><panel_attributes>
+bg=yellow</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>650</x><y>545</y><w>30</w><h>60</h></coordinates><panel_attributes>lt=.</panel_attributes><additional_attributes>10;10;10;40</additional_attributes></element><element><id>Relation</id><coordinates><x>660</x><y>775</y><w>180</w><h>50</h></coordinates><panel_attributes>lt=-&gt;
+comprarNuevoJuego()</panel_attributes><additional_attributes>10;10;40;10;40;30;10;30</additional_attributes></element><element><id>UMLClass</id><coordinates><x>170</x><y>75</y><w>210</w><h>70</h></coordinates><panel_attributes>SistemaAlquiler
+--
+--
++alquilarJuego(Juego):void
++devolverJuego():void
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>370</x><y>115</y><w>100</w><h>40</h></coordinates><panel_attributes>lt=&lt;-
+m1=0..n</panel_attributes><additional_attributes>80;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>510</x><y>196</y><w>70</w><h>150</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;10;10;130;50;130</additional_attributes></element><element><id>Relation</id><coordinates><x>530</x><y>196</y><w>330</w><h>210</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;10;10;190;310;190;310;160</additional_attributes></element><element><id>Relation</id><coordinates><x>470</x><y>196</y><w>590</w><h>220</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;10;10;200;570;200;570;160</additional_attributes></element><element><id>Text</id><coordinates><x>220</x><y>455</y><w>480</w><h>70</h></coordinates><panel_attributes>Diagrama de Secuencia para cuando alguien entrega un juego en mal estado y el
+departamento de compras vuelve a comprar el juego.
+style=wordwrap</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>510</x><y>706</y><w>160</w><h>40</h></coordinates><panel_attributes>lt=&lt;-
+update()</panel_attributes><additional_attributes>140;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>360</x><y>656</y><w>160</w><h>40</h></coordinates><panel_attributes>lt=&lt;-
+setEstado("mal estado")</panel_attributes><additional_attributes>140;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>520</x><y>725</y><w>140</w><h>40</h></coordinates><panel_attributes>lt=&lt;-
+getEstado()</panel_attributes><additional_attributes>10;20;120;20</additional_attributes></element><element><id>Relation</id><coordinates><x>520</x><y>755</y><w>150</w><h>40</h></coordinates><panel_attributes>lt=&lt;..
+"mal estado"</panel_attributes><additional_attributes>130;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>240</x><y>605</y><w>110</w><h>30</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>90;10;10;10</additional_attributes></element><element><id>Text</id><coordinates><x>200</x><y>585</y><w>140</w><h>20</h></coordinates><panel_attributes>devolverJuego(juego1)
+style=wordwrap</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>350</x><y>686</y><w>160</w><h>40</h></coordinates><panel_attributes>lt=&lt;-
+notificar()</panel_attributes><additional_attributes>140;20;10;20</additional_attributes></element></diagram>

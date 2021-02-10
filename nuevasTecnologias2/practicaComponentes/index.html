@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto Vue CDN</title>
+</head>
+
+<body>
+
+    <div id="app" class="container-fluid mt-3">
+        <div class="jumbotron">
+
+           <!-- interpolación -->
+
+            <h1> <b>{{ mensaje }}</b>
+
+      <!-- v-text muestro el valor de la variable en la vista con formato text -->
+
+         <div v-text="mensaje"></div>
+
+           <!-- v-bind : -->
+
+    <button>Valor {{valor}}</button>
+      <input type="text" :value="valor"> {{valor}}<br>
+
+      <img :src="alumno.foto" width="150" :alt="alumno.nombre">
+
+      <p :style="{color:'white', 'background-color':estado1?'green':'red', borderRadius: '10px', padding: '10px'}">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus perferendis a at corrupti porro, quos esse vitae amet nobis praesentium accusantium facilis veniam eveniet quibusdam in facere necessitatibus culpa! Quibusdam!
+            </p>
+
+            <button @click="cambiarColor"> cambiar Color fondo</button>
+           
+
+        <div class="card" :style="{'background-color': color}">
+            <div class="card-header">
+              Featured
+            </div>
+
+        </div>
+
+        <div class="square" :style="{'background-color': color}">
+            <div class="card-header">
+              prueba
+            </div>
+
+        </div>
+
+                   <!-- v-on : Podemos usar la directiva v-on para escuchar eventos DOM 
+                    y ejecutar algunos JavaScript cuando se activan. -->
+
+        <h4><u>Event Binding / v-on</u></h4>
+
+        <button class="btn btn-danger my-3" @click="aumentarValor()">{{valor}}</button>
+        
+        <div id="example-1">
+            <button v-on:click="counter += 1">Add 1</button>
+            <p>Se ha hecho clic en el botón de arriba {{ counter }} veces.</p>
+          </div>
+
+
+    </div>
+
+
+    <!-- Vue.js CDN -->
+    <!-- development version, includes helpful console warnings -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    
+    <script src="/js.js"></script>
+
+</body>
+
+</html>

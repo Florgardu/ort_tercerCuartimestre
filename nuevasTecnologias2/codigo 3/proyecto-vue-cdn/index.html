@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto Vue CDN</title>
+
+    <!-- bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body>
+
+    <div id="app" class="container-fluid mt-3">
+        <div class="jumbotron">
+            <h1>Bienvenidos a Vue.js CDN</h1>
+            <hr>
+
+            <!-- --------------------------------------------- -->
+            <!--            Directivas Data Binding            -->
+            <!-- --------------------------------------------- -->
+            <h4><u>Interpolación / v-text / v-html</u></h4>
+            <b>{{ 3 + 4 }}</b>
+            <div>{{ mensaje }}</div>
+            <div v-text="mensaje"></div>
+            <div v-html="mensaje"></div>
+            <br>
+            <div>{{ mensajeHTML }}</div>
+            <div v-text="mensajeHTML"></div>
+            <div v-html="mensajeHTML"></div>
+            <hr>
+
+            <h4><u>Property Binding / v-bind</u></h4>
+            <input type="text" value="123"><br>
+            <input type="text" value="valor"><br>
+            <input type="text" v-bind:value="valor"> {{valor}}<br>
+            <input type="text" :value="valor"> {{valor}}<br>
+            <hr>
+
+            <h4><u>Event Binding / v-on</u></h4>
+            <button class="btn btn-success my-3" v-on:click="contador++">Contar {{contador}}</button>  <!-- actualiza la variable contador desde la vista a vue-->
+            <button class="btn btn-warning my-3" @click="contador2++">Contar {{contador2}}</button> <!--ante el click aumenta el contado ++ la variable contador se actualiza-->
+            <button class="btn btn-danger my-3" @click="incrementar()">Contar {{getContador()}}</button>
+            <hr>
+
+            <h4><u>Doble Data Binding / v-model</u></h4>
+
+            <h5>Manual</h5>
+            <input type="text" :value="valor2" @input="actualizar($event)"> {{valor2}}<br>
+
+            <h5>Automático</h5>
+            <input type="text" v-model="valor3"> {{valor3}}<br>
+
+            <hr>
+            <hr>
+
+            <!-- --------------------------------------------- -->
+            <!--            Directivas Estructurales           -->
+            <!-- --------------------------------------------- -->
+            <h4><u>v-if</u></h4>
+
+            <button class="btn btn-warning my-3" @click="mostrar=!mostrar">
+                {{ mostrar?'Ocultar':'Mostrar' }}
+            </button>
+            <p v-if="mostrar" class="alert alert-warning">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro iste harum eum est doloribus libero blanditiis omnis, possimus minima praesentium accusamus id magni similique aperiam maiores ducimus sequi dolorem dolor?
+            </p>
+            <p v-else class="alert alert-danger">
+            <!-- <p v-if="!mostrar" class="alert alert-danger"> -->
+                ELEMENTO REMOVIDO
+            </p>
+            <hr>
+
+            <h4><u>v-show</u></h4>
+
+            <button class="btn btn-info my-3" @click="mostrar2=!mostrar2">
+                {{ mostrar2?'Ocultar':'Mostrar' }}
+            </button>
+            <p v-show="mostrar2" class="alert alert-info">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro iste harum eum est doloribus libero blanditiis omnis, possimus minima praesentium accusamus id magni similique aperiam maiores ducimus sequi dolorem dolor?
+            </p>
+            <hr>
+
+            <h4><u>v-for</u></h4>
+            <br>
+            <ul>
+                <li v-for="(usuario,index) in usuarios">
+                    {{ index + 1 }} {{ usuario }}
+                </li>
+            </ul>
+
+        </div>
+    </div>
+
+
+    <!-- Vue.js CDN -->
+   <!-- // esto se pega arriba del scrip, porque mi script usa el objeto vue-->
+    <!-- development version, includes helpful console warnings -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES6: let - const - arrow function - template string</title>
+</head>
+<body>
+    
+    <script>
+
+        console.log('/* ----------------------------------- */')
+        console.log('/* Diferencias entre var / let y const */')
+        console.log('/* ----------------------------------- */')
+
+        /* var a = 1
+        var a = 2 */
+        let a = 1
+        a = 2
+        console.log(a)
+
+        console.log('----------------')
+
+        for(let i=0; i<5; i++) {
+            console.log(i)
+        }
+        //console.log(i)
+
+        console.log('----------------')
+
+        /* cuerpo de código anónimo */
+        {
+            /* var anonimo = 'anonimo' */
+            /* let anonimo = 'anonimo' */
+            const anonimo = 'anonimo'
+            //anonimo = 'anonimo-update'
+            console.log(anonimo)
+        }
+        //console.log(anonimo)
+
+        /* cuerpo de código condicional (ej1) */
+        if(true) {
+            /* var condicional = 'condicional' */
+            let condicional = 'condicional-1'
+            console.log(condicional)
+        }
+        //console.log(condicional)
+
+        /* cuerpo de código condicional (ej2) */
+        let condicional = 'condicional-global'
+        if(true) {
+            let condicional = 'condicional-local'
+            /* let condicional = 'condicional' */
+            console.log(condicional)
+        }
+        console.log(condicional)
+
+        /* cuerpo de código funcional */
+        function foo() {
+            //var funcional = 'funcional'
+            let funcional = 'funcional'
+            console.log(funcional)
+        }
+        foo()
+        //console.log(funcional)
+
+        console.log('/* ----------------------------------- */')
+        console.log('/*      function y Arrow function      */')
+        console.log('/* ----------------------------------- */')
+
+        /* function dobleDe(a) {
+            return 2*a
+        } */
+
+        /* const dobleDe = function(a) {
+            return 2*a
+        } */
+
+        /* Arrow function */
+        const dobleDe = a => 2*a
+        const suma = (a,b) => a + b
+        const getSaludo = () => 'Hola que tal!'
+        const getRandom1a1000 = () => {
+            let random = Math.random()  // 0 ... 0.999999999999.........
+            random *= 1000              // 0 ... 999.999999999.........
+            random = parseInt(random)   // 0 ... 999
+            random++                    // 1 ... 1000
+            return random
+        }
+        const getPersona = () => ({ nombre: 'Juan', edad: 23 })
+        const saludar = () => {
+            console.log('holaaaa!!')
+        }
+
+        console.log(dobleDe(70))
+        console.log(suma(70,45))
+        console.log(getSaludo())
+        console.log(getRandom1a1000())
+        /* console.log(getRandom1a1000())
+        console.log(getRandom1a1000()) */
+        console.log(getPersona())
+        saludar()
+
+        /* console.log(dobleDe)
+        console.log(suma)
+        console.log(getSaludo)
+        console.log(getRandom1a1000) */
+
+        console.log('/* ----------------------------------- */')
+        console.log('/*          Template String            */')
+        console.log('/* ----------------------------------- */')
+
+        /* const cuadradoDe = a => a*a */
+        /* const cuadradoDe = a => Math.pow(a,2) */
+        const cuadradoDe = a => a**2
+        
+        let num = 6
+        /* console.log('El cuadrado de ' + num + ' es ' + cuadradoDe(num)) */
+        console.log(`El cuadrado de ${num} es ${cuadradoDe(num)}`)
+
+        console.log('/* ----------------------------------- */')
+        console.log('/*           String Methods            */')
+        console.log('/* ----------------------------------- */')
+        //https://www.w3schools.com/js/js_string_methods.asp
+
+        let mensaje = 'Hola Mundo'
+        console.log(mensaje, mensaje.length)
+
+        let mensajeEnMayuscula = mensaje.toUpperCase()
+        console.log(mensajeEnMayuscula)
+
+        let mensajeEnMinuscula = mensaje.toLowerCase()
+        console.log(mensajeEnMinuscula)
+
+        console.log(mensaje.indexOf('un'))
+        console.log(mensaje.includes('un'))
+
+
+        console.log('/* ----------------------------------- */')
+        console.log('/*           Array Methods             */')
+        console.log('/* ----------------------------------- */')
+        //https://www.w3schools.com/js/js_array_methods.asp
+
+        let array = ['Hola', 'Mundo']
+        console.log(array)
+        console.log(array.indexOf('Mundo'))
+        console.log(array.includes('Mundo'))
+
+          const numeros = [1,2,3,4,5,6,7,8,9]
+        /* const numerosX2 = numeros.map( num => `<li>${num*2}</li>`) */
+        const numerosX2 = numeros.map( num => num*2)
+        //const numerosPares = numeros.filter( num => num % 2 == 0)
+        const numerosPares = numeros.filter( num => (num % 2 == 0)? true:false)
+
+        console.log(numeros)
+        console.log(numerosX2)
+        console.log(numerosPares)
+
+    </script>
+
+</body>
+</html>

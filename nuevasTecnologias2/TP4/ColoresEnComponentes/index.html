@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <div id="app" class="container-fluid mt-3">
+
+        <headerjuego v-bind:color-jugar='colorJugar'></headerjuego>
+        
+        <botones v-bind:color-jugar='colorJugar' v-bind:colors='colors' v-bind:mensaje='mensaje'></botones>
+
+        <cuadradoColor v-for="(color, index) in colors"
+            v-bind:color="color"
+            v-bind:index="index"
+            v-bind:key="myKey(color)" 
+            v-bind:colors='colors'
+            v-bind:conocer-ganador="conocerGanador">
+    </cuadradoColor>
+    </div>
+
+    
+  <!-- Vue.js CDN -->
+    <!-- development version, includes helpful console warnings -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    
+    <script src="main.js"></script>
+
+
+
+</body>
+
+</html>

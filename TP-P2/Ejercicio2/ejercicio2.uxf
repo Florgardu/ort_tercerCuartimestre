@@ -1,0 +1,33 @@
+<diagram program="umletino" version="14.3.0"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>150</x><y>69</y><w>210</w><h>100</h></coordinates><panel_attributes>Caja de Ahorro 
+--
+-saldo: int
+--
+-retirarDinero()
+-setEstado()
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>490</x><y>69</y><w>210</w><h>70</h></coordinates><panel_attributes>&lt;&lt;Estado&gt;&gt;
+--
+/-retirarDinero()/
+/-chequearSaldo()/
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>230</x><y>269</y><w>210</w><h>60</h></coordinates><panel_attributes>SinFondo
+--
+-retirarDinero()
+-chequearSaldo()
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>350</x><y>109</y><w>160</w><h>30</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>140;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>380</x><y>129</y><w>140</w><h>160</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>120;10;10;140</additional_attributes></element><element><id>Relation</id><coordinates><x>560</x><y>129</y><w>30</w><h>160</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;140</additional_attributes></element><element><id>Relation</id><coordinates><x>670</x><y>129</y><w>160</w><h>160</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;140;140</additional_attributes></element><element><id>UMLClass</id><coordinates><x>470</x><y>269</y><w>210</w><h>60</h></coordinates><panel_attributes>Bloqueada
+--
+-retirarDinero()
+-chequearSaldo()
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>710</x><y>269</y><w>210</w><h>60</h></coordinates><panel_attributes>ConFondo
+--
+-retirarDinero()
+-chequearSaldo()
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLGeneric</id><coordinates><x>170</x><y>409</y><w>130</w><h>30</h></coordinates><panel_attributes>_CajaDeAhorro: Caja1_
+bg=orange</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLGeneric</id><coordinates><x>230</x><y>459</y><w>20</w><h>130</h></coordinates><panel_attributes>
+bg=yellow</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLGeneric</id><coordinates><x>340</x><y>409</y><w>110</w><h>30</h></coordinates><panel_attributes>_Estado:SinFondos_
+bg=red</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLGeneric</id><coordinates><x>380</x><y>459</y><w>20</w><h>130</h></coordinates><panel_attributes>
+bg=red</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>230</x><y>419</y><w>30</w><h>60</h></coordinates><panel_attributes>lt=.</panel_attributes><additional_attributes>10;10;10;40</additional_attributes></element><element><id>Relation</id><coordinates><x>220</x><y>559</y><w>200</w><h>40</h></coordinates><panel_attributes>lt=&lt;-
+Error:"no se puede retirar dinero"</panel_attributes><additional_attributes>40;20;150;20</additional_attributes></element><element><id>Relation</id><coordinates><x>140</x><y>489</y><w>100</w><h>30</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>80;10;10;10</additional_attributes></element><element><id>Text</id><coordinates><x>130</x><y>469</y><w>100</w><h>70</h></coordinates><panel_attributes>retirarDinero()</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>250</x><y>509</y><w>150</w><h>30</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>130;10;10;10</additional_attributes></element><element><id>Text</id><coordinates><x>260</x><y>499</y><w>100</w><h>70</h></coordinates><panel_attributes>retirarDinero()</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>390</x><y>519</y><w>150</w><h>50</h></coordinates><panel_attributes>lt=-&gt;
+chequearSaldo()</panel_attributes><additional_attributes>10;10;40;10;40;30;10;30</additional_attributes></element></diagram>

@@ -1,0 +1,19 @@
+h1 {
+    color: blue;
+}
+
+h4 {
+    color: purple;
+}
+
+h5 {
+    color: crimson;
+}
+
+.jumbotron {
+    background-color: rgb(221, 222, 223);
+}
+
+hr {
+    background-color: #999;
+}
